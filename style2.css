@@ -1,0 +1,311 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------- HEADER --------------------*/
+.header-copa {
+  background: linear-gradient(
+    -45deg,
+    #ff0055,
+    #0055ff,
+    #00cc66,
+    #ff0055,
+    #0055ff,
+    #00cc66
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 15px 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+  height: 80px;
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease-in-out infinite;
+}
+
+.logo-container {
+  position: absolute;
+  left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 50px;
+  font-weight: bold;
+}
+/*-------------------FIM DO HEADER--------------------*/
+
+/*----------------------VIDEO*------------------*/
+.video-container {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.meu-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/*--------------FIM DO VIDEO------------------*/
+
+/*------------------------INICIO----------------------------*/
+.Titúlo_inicio {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 60px;
+}
+
+.Primeiro_paragrafo {
+  background-color: #001b94;
+  padding: 10px;
+  color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  font-size: 25px;
+  border-radius: 15px;
+}
+/*----------------------FIM DO INICIO-----------------------*/
+
+/*-------------------CARROSSEL DE IMAGENS-------------------*/
+.carrossel {
+  overflow: hidden;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.carrossel-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scroll-auto 20s linear infinite;
+}
+
+.carrossel:hover .carrossel-track {
+  animation-play-state: paused;
+}
+
+.carrossel-track img {
+  height: 280px;
+  width: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-auto {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/*-----------------FIM DO CARROSSEL-------------------------*/
+
+/*------------------------SEGUNDO PARÁGRAFO----------------------*/
+.Segundo_paragrafo {
+  display: flex;
+  align-items: center; /* alinha verticalmente no centro */
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 15px;
+  gap: 40px;
+}
+
+.Segundo_paragrafo img {
+  width: 700px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.Segundo_paragrafo p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+.Texto_segundo_paragrafo {
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  background-image: url("images/Mexico_estilo_img.png");
+  background-size: 200% 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 600px;
+  height: 400px;
+  animation: fundoAnimation 100s infinite;
+  border-radius: 15px;
+  padding: 20px;
+}
+/*-----------------FIM DO SEGUNDO PARAGRAFO---------------------*/
+
+/*-------------------FUNDO BLOB-------------------*/
+.bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: white;
+  z-index: -1;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+}
+
+.blob-shadow-1 {
+  top: -60px;
+  left: -80px;
+  width: 600px;
+  height: 400px;
+  background: #e0e0e0;
+  transform: translate(30px, 30px);
+  z-index: 1;
+}
+
+.blob-shadow-2 {
+  bottom: -80px;
+  right: -100px;
+  width: 540px;
+  height: 380px;
+  background: #e0e0e0;
+  border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%;
+  transform: translate(-30px, -30px);
+  z-index: 1;
+}
+
+.blob-shadow-3 {
+  bottom: -100px;
+  left: -150px;
+  width: 600px;
+  height: 400px;
+  background: #e0e0e0;
+  border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%;
+  transform: translate(-30px, -30px);
+  z-index: 1;
+}
+
+.blob-1 {
+  top: -80px;
+  left: -100px;
+  width: 600px;
+  height: 400px;
+  background: linear-gradient(135deg, #ff0055,  #0055ff);
+  z-index: 2;
+  animation: morph1 6s ease-in-out infinite alternate;
+}
+   
+.blob-2 {
+  bottom: -80px;
+  right: -100px;
+  width: 540px;
+  height: 380px;
+  background: linear-gradient(135deg, #00cc66, #ff0055);
+  border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%;
+  z-index: 2;
+  animation: morph2 9s ease-in-out infinite alternate;
+}
+
+.blob-3 {
+  bottom: -100px;
+  left: -150px;
+  width: 600px;
+  height: 400px;
+  background: linear-gradient(135deg, #0055ff, #00cc66);
+  border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%;
+  z-index: 2;
+  animation: morph2 9s ease-in-out infinite alternate;
+}
+
+.circulo {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.c1 {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #00cc66;
+  top: 32%;
+  left: 44%;
+}
+
+.c2 {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #ff0055;
+  top: 12%;
+  right: 22%;
+}
+
+.c3 {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #0055ff;
+  bottom: 18%;
+  left: 6%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 4px,
+    #00cc66 4px,
+    #ff0055 8px
+  );
+}
+
+@keyframes morph1 {
+  from { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+  to   { border-radius: 40% 60% 30% 70% / 60% 40% 55% 45%; }
+}
+
+@keyframes morph2 {
+  from { border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%; }
+  to   { border-radius: 60% 40% 70% 30% / 45% 55% 40% 60%; }
+}
+/*-----------------FIM DO FUNDO BLOB---------------------*/
+
+/* =======================================
+            Animações keyframes
+   =======================================*/
+
+/*Animação do header*/
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*Animação do fundo do segundo parágrafo*/
+@keyframes fundoAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
