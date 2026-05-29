@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Barlow', sans-serif;
 }
 
 /* ---- MENU RETRÁTIL ---- */
@@ -70,7 +73,7 @@ body {
   padding: 12px 24px;
   color: white;
   text-decoration: none;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 15px;
   letter-spacing: 0.3px;
   transition: background 0.2s ease, padding-left 0.2s ease;
@@ -96,7 +99,7 @@ body {
   position: relative;
   padding: 15px 20px;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   height: 80px;
   background-size: 400% 400%;
   animation: gradientAnimation 20s ease-in-out infinite;
@@ -118,6 +121,8 @@ body {
   margin: 0;
   font-size: 50px;
   font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
 }
 
 @keyframes gradientAnimation {
@@ -249,22 +254,72 @@ body {
   to   { border-radius: 60% 40% 70% 30% / 45% 55% 40% 60%; }
 }
 
+/*-----------------------ESTADIOS MAIS IMPORTANTES---------------------------*/
+
+.Estadios_mais_Importantes h1 {
+  text-align: center;
+  font-size: 67px;
+  margin: 60px 0 20px;
+  color: #001b94;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+.Estadios_mais_Importantes p {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 20px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.titulo-estadios {
+  text-align: center;
+  padding: 35px;
+}
+
+.Estadio_img {
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.Estadio_img img {
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.Estadio_text p {
+  border: 3.5px solid rgb(61, 94, 241);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 16px 24px;
+  border-radius: 8px;
+}
+
+/*--------------------FIM DO ESTADIOS MAIS IMPORTANTES-----------------------*/
+
 /*-------------------SEÇÃO ESTÁDIOS-------------------*/
 .secao-estadios {
   max-width: 1300px;
   margin: 60px auto;
   padding: 0 20px;
-  font-family: Arial, sans-serif;
-}
-
-.titulo-estadios {
-  text-align: center;
-  margin-bottom: 10px;
+  font-family: 'Barlow', sans-serif;
 }
 
 .titulo-estadios h2 {
   font-size: 60px;
   margin: 0 0 8px 0;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  color: #001b94;
 }
 
 .subtitulo-estadios {
@@ -272,6 +327,13 @@ body {
   color: #444;
   margin: 0 0 30px 0;
   text-align: center;
+}
+
+/*-------------------FILTROS-------------------*/
+
+/* Esconde os radio inputs mas mantém funcionalidade */
+.filtro-radio {
+  display: none;
 }
 
 .filtros-estadios {
@@ -283,22 +345,64 @@ body {
 }
 
 .filtro-btn {
+  display: inline-block;
   padding: 10px 22px;
   border: 2px solid #001b94;
   background: transparent;
   color: #001b94;
   border-radius: 25px;
   font-size: 15px;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  user-select: none;
 }
 
-.filtro-btn:hover,
-.filtro-btn.ativo {
+.filtro-btn:hover {
   background: #001b94;
   color: white;
   transform: scale(1.05);
+}
+
+/* Botão ativo quando o radio correspondente está marcado */
+#filtro-todos:checked ~ .filtros-estadios label[for="filtro-todos"],
+#filtro-eua:checked ~ .filtros-estadios label[for="filtro-eua"],
+#filtro-mexico:checked ~ .filtros-estadios label[for="filtro-mexico"],
+#filtro-canada:checked ~ .filtros-estadios label[for="filtro-canada"] {
+  background: #001b94;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* --- Lógica de exibição dos cards por país --- */
+
+/* Padrão: todos visíveis */
+#filtro-todos:checked ~ .grid-estadios .card-estadio {
+  display: block;
+}
+
+/* Filtro EUA: só EUA */
+#filtro-eua:checked ~ .grid-estadios .card-estadio {
+  display: none;
+}
+#filtro-eua:checked ~ .grid-estadios .card-estadio[data-pais="eua"] {
+  display: block;
+}
+
+/* Filtro México */
+#filtro-mexico:checked ~ .grid-estadios .card-estadio {
+  display: none;
+}
+#filtro-mexico:checked ~ .grid-estadios .card-estadio[data-pais="mexico"] {
+  display: block;
+}
+
+/* Filtro Canadá */
+#filtro-canada:checked ~ .grid-estadios .card-estadio {
+  display: none;
+}
+#filtro-canada:checked ~ .grid-estadios .card-estadio[data-pais="canada"] {
+  display: block;
 }
 
 /*-------------------GRID DE ESTÁDIOS-------------------*/
@@ -312,19 +416,9 @@ body {
   background: rgba(255, 255, 255, 0.80);
   backdrop-filter: blur(6px);
   border: 1.5px solid rgba(0, 27, 148, 0.15);
-  border-radius: 18px;
+  border-radius: 6px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
-}
-
-.card-estadio:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 36px rgba(0, 27, 148, 0.18);
-}
-
-.card-estadio.oculto {
-  display: none;
 }
 
 .card-img-wrap {
@@ -354,7 +448,7 @@ body {
   border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
   backdrop-filter: blur(4px);
 }
 
@@ -370,14 +464,15 @@ body {
   margin: 0 0 6px 0;
   font-size: 17px;
   color: #001b94;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
 }
 
 .cidade {
   margin: 0 0 10px 0;
   font-size: 13px;
   color: #555;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 .stats {
@@ -392,7 +487,7 @@ body {
   padding: 4px 12px;
   font-size: 12px;
   color: #333;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 /*-------------------SEÇÃO MAPA / DISTRIBUIÇÃO-------------------*/
@@ -400,7 +495,7 @@ body {
   max-width: 1000px;
   margin: 20px auto 60px;
   padding: 0 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 .mapa-titulo {
@@ -412,6 +507,8 @@ body {
   font-size: 36px;
   margin: 0;
   color: #111;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
 }
 
 .mapa-cards {
@@ -448,6 +545,8 @@ body {
   margin: 0 0 6px 0;
   font-size: 20px;
   color: #001b94;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
 }
 
 .num-estadios {
@@ -469,7 +568,7 @@ body {
   background-color: #1a1a1a;
   color: #ffffff;
   padding: 20px 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 14px;
   width: 100%;
 }
@@ -526,5 +625,9 @@ body {
 
   .grid-estadios {
     grid-template-columns: 1fr;
+  }
+
+  .Estadios_mais_Importantes h1 {
+    font-size: 42px;
   }
 }
