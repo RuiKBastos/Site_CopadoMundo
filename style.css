@@ -3,6 +3,87 @@ body {
   padding: 0;
 }
 
+/* ---- MENU RETRÁTIL ---- */
+.menu-checkbox {
+  display: none;
+}
+
+.menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 100;
+  padding: 8px;
+}
+
+.menu-btn span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* Animação do ícone hambúrguer → X */
+.menu-checkbox:checked ~ .menu-btn span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-checkbox:checked ~ .menu-btn span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menu-checkbox:checked ~ .menu-btn span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Painel do menu */
+.menu-retrail {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  min-width: 220px;
+  border-radius: 0 0 0 12px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.menu-checkbox:checked ~ .menu-retrail {
+  max-height: 400px;
+}
+
+.menu-retrail ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.menu-retrail ul li a {
+  display: block;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.menu-retrail ul li a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  padding-left: 32px;
+}
+/* ---- FIM DO MENU RETRÁTIL ---- */
+
 /*------------------- HEADER --------------------*/
 .header-copa {
   background: linear-gradient(-45deg,
@@ -244,6 +325,61 @@ body {
 }
 /*-----------------FIM DO TERCEIRO PARAGRAFO---------------------*/
 
+/*------------------------QUARTO PARÁGRAFO----------------------*/
+.Quarto_paragrafo {
+  display: flex;
+  align-items: center;
+  /* alinha verticalmente no centro */
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 15px;
+  gap: 40px;
+}
+
+.Quarto_paragrafo img {
+  width: 700px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.Quarto_paragrafo p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.Texto_quarto_paragrafo {
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+  color: rgb(255, 255, 255);
+  background-image: url("images/Canada_estilo_img.png");
+  background-size: 200% 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 600px;
+  height: 400px;
+  animation: fundoAnimation2 100s infinite;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+@keyframes fundoAnimation2 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*-----------------FIM DO QUARTO PARAGRAFO---------------------*/
+
 /*-------------------FUNDO BLOB-------------------*/
 .bg {
   position: fixed;
@@ -431,3 +567,115 @@ body {
     justify-content: center;
   }
 }
+
+/*-------------------SEÇÃO SELEÇÕES-------------------*/
+.secao-selecoes {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+.titulo-selecoes {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.titulo-selecoes h2 {
+  font-size: 60px;
+  margin: 0 0 8px 0;
+}
+
+.subtitulo-selecoes {
+  font-size: 20px;
+  color: #444;
+  margin: 0 0 30px 0;
+}
+
+.filtros-selecoes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filtro-btn {
+  padding: 10px 22px;
+  border: 2px solid #001b94;
+  background: transparent;
+  color: #001b94;
+  border-radius: 25px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+  background: #001b94;
+  color: white;
+  transform: scale(1.05);
+}
+
+.grid-selecoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card-selecao {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(0, 27, 148, 0.15);
+  border-radius: 16px;
+  padding: 24px 16px 18px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card-selecao:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 27, 148, 0.15);
+}
+
+.card-selecao.oculto {
+  display: none;
+}
+
+.bandeira {
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.card-selecao h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #001b94;
+}
+
+.card-selecao p {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.continente-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.continente-tag.americas { background: #d4edda; color: #155724; }
+.continente-tag.europa   { background: #cce5ff; color: #004085; }
+.continente-tag.africa   { background: #fff3cd; color: #856404; }
+.continente-tag.asia     { background: #f8d7da; color: #721c24; }
+.continente-tag.oceania  { background: #e2d9f3; color: #4a235a; }
+/*-----------------FIM SEÇÃO SELEÇÕES-----------------*/

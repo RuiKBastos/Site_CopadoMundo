@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Seleções - Copa do Mundo 2026</title>
+</head>
+
+<body>
+  <div class="bg">
+    <div class="blob blob-shadow-1"></div>
+    <div class="blob blob-shadow-2"></div>
+    <data class="blob blob-shadow-3"></data>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="circulo c1"></div>
+    <div class="circulo c2"></div>
+    <div class="circulo c3"></div>
+  </div>
+
+  <header class="header-copa">
+    <div class="logo-container">
+      <img src="images/trofeu_copa_img.jpeg" alt="Logo Copa do Mundo 2026" class="logo" />
+    </div>
+    <h1 class="titulo">Copa do Mundo</h1>
+
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+    <label for="menu-toggle" class="menu-btn" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="menu-retrail">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="selecoes.html">Seleções</a></li>
+        <li><a href="#estadios">Estádios</a></li>
+        <li><a href="#politica">Política de Privacidade</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SEÇÃO SELEÇÕES -->
+  <section class="secao-selecoes" id="selecoes">
+    <div class="titulo-selecoes">
+      <h2>Seleções</h2>
+      <p class="subtitulo-selecoes">48 seleções. Um campeão.</p>
+    </div>
+
+    <div class="filtros-selecoes">
+      <button class="filtro-btn ativo" onclick="filtrar(this, 'todos')">Todos</button>
+      <button class="filtro-btn" onclick="filtrar(this, 'americas')">Américas</button>
+      <button class="filtro-btn" onclick="filtrar(this, 'europa')">Europa</button>
+      <button class="filtro-btn" onclick="filtrar(this, 'africa')">África</button>
+      <button class="filtro-btn" onclick="filtrar(this, 'asia')">Ásia</button>
+      <button class="filtro-btn" onclick="filtrar(this, 'oceania')">Oceania</button>
+    </div>
+
+    <div class="grid-selecoes" id="grid-selecoes">
+
+      <!-- AMÉRICAS -->
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇧🇷</div>
+        <h3>Brasil</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>5x Campeão Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇦🇷</div>
+        <h3>Argentina</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>3x Campeã Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇺🇸</div>
+        <h3>Estados Unidos</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>País sede 2026</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇲🇽</div>
+        <h3>México</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>País sede 2026</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇨🇦</div>
+        <h3>Canadá</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>País sede 2026</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇺🇾</div>
+        <h3>Uruguai</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>2x Campeão Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇨🇴</div>
+        <h3>Colômbia</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>Conmebol</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇵🇪</div>
+        <h3>Peru</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>Conmebol</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇨🇱</div>
+        <h3>Chile</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>Conmebol</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇻🇪</div>
+        <h3>Venezuela</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>Conmebol</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇵🇦</div>
+        <h3>Panamá</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>Concacaf</p>
+      </div>
+      <div class="card-selecao" data-continente="americas">
+        <div class="bandeira">🇨🇷</div>
+        <h3>Costa Rica</h3>
+        <span class="continente-tag americas">Américas</span>
+        <p>Concacaf</p>
+      </div>
+
+      <!-- EUROPA -->
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇫🇷</div>
+        <h3>França</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>2x Campeã Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇩🇪</div>
+        <h3>Alemanha</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>4x Campeã Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇪🇸</div>
+        <h3>Espanha</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>1x Campeã Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+        <h3>Inglaterra</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>1x Campeã Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇵🇹</div>
+        <h3>Portugal</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇳🇱</div>
+        <h3>Países Baixos</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇧🇪</div>
+        <h3>Bélgica</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇮🇹</div>
+        <h3>Itália</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>4x Campeã Mundial</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇭🇷</div>
+        <h3>Croácia</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇩🇰</div>
+        <h3>Dinamarca</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇦🇹</div>
+        <h3>Áustria</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇨🇭</div>
+        <h3>Suíça</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+      <div class="card-selecao" data-continente="europa">
+        <div class="bandeira">🇸🇰</div>
+        <h3>Eslováquia</h3>
+        <span class="continente-tag europa">Europa</span>
+        <p>UEFA</p>
+      </div>
+
+      <!-- ÁFRICA -->
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇲🇦</div>
+        <h3>Marrocos</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇸🇳</div>
+        <h3>Senegal</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇳🇬</div>
+        <h3>Nigéria</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇨🇲</div>
+        <h3>Camarões</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇨🇮</div>
+        <h3>Costa do Marfim</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇬🇭</div>
+        <h3>Gana</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇿🇦</div>
+        <h3>África do Sul</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇪🇬</div>
+        <h3>Egito</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+      <div class="card-selecao" data-continente="africa">
+        <div class="bandeira">🇹🇳</div>
+        <h3>Tunísia</h3>
+        <span class="continente-tag africa">África</span>
+        <p>CAF</p>
+      </div>
+
+      <!-- ÁSIA -->
+      <div class="card-selecao" data-continente="asia">
+        <div class="bandeira">🇯🇵</div>
+        <h3>Japão</h3>
+        <span class="continente-tag asia">Ásia</span>
+        <p>AFC</p>
+      </div>
+      <div class="card-selecao" data-continente="asia">
+        <div class="bandeira">🇰🇷</div>
+        <h3>Coreia do Sul</h3>
+        <span class="continente-tag asia">Ásia</span>
+        <p>AFC</p>
+      </div>
+      <div class="card-selecao" data-continente="asia">
+        <div class="bandeira">🇸🇦</div>
+        <h3>Arábia Saudita</h3>
+        <span class="continente-tag asia">Ásia</span>
+        <p>AFC</p>
+      </div>
+      <div class="card-selecao" data-continente="asia">
+        <div class="bandeira">🇮🇷</div>
+        <h3>Irã</h3>
+        <span class="continente-tag asia">Ásia</span>
+        <p>AFC</p>
+      </div>
+      <div class="card-selecao" data-continente="asia">
+        <div class="bandeira">🇶🇦</div>
+        <h3>Catar</h3>
+        <span class="continente-tag asia">Ásia</span>
+        <p>AFC</p>
+      </div>
+      <div class="card-selecao" data-continente="asia">
+        <div class="bandeira">🇺🇿</div>
+        <h3>Uzbequistão</h3>
+        <span class="continente-tag asia">Ásia</span>
+        <p>AFC</p>
+      </div>
+
+      <!-- OCEANIA -->
+      <div class="card-selecao" data-continente="oceania">
+        <div class="bandeira">🇦🇺</div>
+        <h3>Austrália</h3>
+        <span class="continente-tag oceania">Oceania</span>
+        <p>OFC / AFC</p>
+      </div>
+      <div class="card-selecao" data-continente="oceania">
+        <div class="bandeira">🇳🇿</div>
+        <h3>Nova Zelândia</h3>
+        <span class="continente-tag oceania">Oceania</span>
+        <p>OFC</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer-simples">
+    <div class="footer-conteudo">
+      <p>&copy; 2026 Copa do Mundo. Todos os direitos reservados.</p>
+      <ul class="footer-links">
+        <li><a href="https://www.fifa.com/pt">Sobre</a></li>
+        <li><a href="#politica">Política de Privacidade</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    function filtrar(botao, continente) {
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+      botao.classList.add('ativo');
+
+      document.querySelectorAll('.card-selecao').forEach(card => {
+        if (continente === 'todos' || card.dataset.continente === continente) {
+          card.classList.remove('oculto');
+        } else {
+          card.classList.add('oculto');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
